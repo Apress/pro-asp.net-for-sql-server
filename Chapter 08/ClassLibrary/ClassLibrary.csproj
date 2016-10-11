@@ -1,0 +1,113 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8201FFE-1C53-46CF-A606-C4B3B58D433F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chapter08</RootNamespace>
+    <AssemblyName>Chapter08</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SubSonic, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Common\Tools\SubSonic\Bin\SubSonic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildProviders\AbcBuildProvider.cs" />
+    <Compile Include="Generated\SubSonic\AllStructs.cs" />
+    <Compile Include="Generated\SubSonic\Chapter08\Location.cs" />
+    <Compile Include="Generated\SubSonic\Chapter08\LocationController.cs" />
+    <Compile Include="Generated\SubSonic\Chapter08\Person.cs" />
+    <Compile Include="Generated\SubSonic\Chapter08\PersonController.cs" />
+    <Compile Include="Generated\SubSonic\Chapter08\StoredProcedures.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Alphabeticallistofproduct.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Category.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CategoryController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CategorySalesfor1997.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CurrentProductList.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Customer.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CustomerandSuppliersbyCity.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CustomerController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CustomerCustomerDemo.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CustomerCustomerDemoController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CustomerDemographic.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\CustomerDemographicController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Employee.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\EmployeeController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\EmployeeTerritory.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\EmployeeTerritoryController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Invoice.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Order.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\OrderController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\OrderDetail.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\OrderDetailController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\OrderDetailsExtended.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\OrdersQry.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\OrderSubtotal.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Product.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ProductCategoryMap.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ProductCategoryMapController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ProductController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ProductsAboveAveragePrice.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ProductSalesfor1997.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ProductsbyCategory.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\QuarterlyOrder.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Region.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\RegionController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\SalesbyCategory.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\SalesTotalsbyAmount.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Shipper.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\ShipperController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\StoredProcedures.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\SummaryofSalesbyQuarter.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\SummaryofSalesbyYear.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Supplier.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\SupplierController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\Territory.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\TerritoryController.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\TextEntry.cs" />
+    <Compile Include="Generated\SubSonic\Northwind\TextEntryController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BuildProviders\XyzBuildProvider.cs" />
+    <Compile Include="SubSonicDAL\LocationController.cs" />
+    <Compile Include="SubSonicDAL\Person.cs" />
+    <Compile Include="SubSonicDAL\PersonController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

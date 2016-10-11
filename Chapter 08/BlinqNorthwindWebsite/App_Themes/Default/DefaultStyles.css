@@ -1,0 +1,125 @@
+﻿body, div, p, h1, h2, h3, h4, ul, li, table {
+	margin:0;
+	padding:0;
+	border:none;
+
+}
+
+body {
+	background: #FFFFFF;	
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size:75%;
+	margin-bottom:40px;
+	color:#333;
+	background:#FFFFFF url(images/masthead_bg.jpg) repeat-x left top;
+}
+
+#masthead {
+	height:109px;
+	border-bottom:1px solid #B2D0DF;	
+	background-image:url(images/masthead.jpg);
+	background-repeat:no-repeat;
+}
+
+/* Opera (<=8) display fix. Remove the uncomment to enable. */
+/*@media all and (min-width: 0px){
+	#masthead {
+		margin-top:-10px!important;
+	}
+}*/
+
+#breadcrumbs {
+	position:absolute;
+	top:65px;
+	left:20px;
+	color:#FFF;
+	font-size:1.5em;
+	font-weight:bold;
+	white-space:nowrap;
+}
+
+#breadcrumbs a {color:#FFF;}
+
+#breadcrumbs a:hover {text-decoration: none;}
+
+#content {position:relative;}
+
+#menu {
+	position:absolute;
+	top:55px;
+	left:20px;
+	width:180px;
+	margin-bottom:20px;
+	z-index:1000;
+}
+
+#maincontent 
+{
+	padding:55px 20px 40px 200px;
+}
+
+#maincontent h1 {
+	margin-top:0;
+	margin-bottom:1em;
+	color:#F70;
+	font-size:1.8em;
+}
+
+/*The following 4 rules are styling the content of the default home page.*/
+#maincontent ul {
+	width:400px;
+	list-style:none;
+	border:1px solid #B2D0DF;
+	padding:15px 0;
+}
+
+#maincontent ul li {padding: 5px 5px 5px 15px;}
+
+#maincontent ul li a {color: #0B4892;}
+
+#maincontent ul li a:hover {color:#F70; text-decoration:none;}
+
+#maincontent .link {
+	background:#FFF url(images/button_left_bg.png) no-repeat left top;
+	height:22px;
+	margin-bottom:20px;
+	padding:0;
+}
+
+#maincontent a.button {
+	background:url(images/button_right_bg.png) no-repeat right top;
+	font-weight:bold;
+	text-decoration:none;
+	color:#0B4892;
+	font-size:12px;
+	line-height:22px;
+	margin-left:10px;
+	padding:4px 40px 4px 15px;
+}
+
+#maincontent a.button:hover {color:#F70;}
+
+#maincontent table {margin-bottom:20px;}
+#maincontent table table {margin-bottom:0;}
+
+
+#maincontent table a {color: #295CA7;}
+#maincontent table a:hover {text-decoration:none;}
+
+#maincontent a.navLink {
+	color:#295CA7; 
+	font-weight:bold;
+}
+
+#maincontent a.navLink:hover {
+	text-decoration:none;
+	color:#F70;
+}
+
+#footer {
+	color:#B2D0DF;
+	font-size:0.8em;
+	letter-spacing:0.1em;
+	margin-left:200px;
+	margin-bottom:5px;
+}

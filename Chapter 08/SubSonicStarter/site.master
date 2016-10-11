@@ -1,0 +1,64 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link id="Link1" rel="stylesheet" type="text/css" href='~/js/modal/subModal.css' runat="server" />
+    <meta name="description" content="Description here" />
+    <meta name="keywords" content="Keywords here"  />
+    <title></title>
+ </head>
+<body>
+<script src="<%=Page.ResolveUrl("~/js/effects/prototype.js") %>" type="text/javascript"></script>
+<script src="<%=Page.ResolveUrl("~/js/effects/scriptaculous.js") %>" type="text/javascript"></script>
+
+<form id="elForm" runat="server">
+	<div id="header">
+        <div id=title><a href='<%=Page.ResolveUrl("~/default.aspx") %>'>
+            <img src='<%=Page.ResolveUrl("~/images/subsonic_logo.png") %>' /> </a></div>
+	</div>
+    
+    <div id=mainwrapper>
+    <div id=headerseparator></div>
+    <div style="height:20px; margin-left:100px;margin-top:5px;">
+        <asp:Menu runat=server ID=siteMenu  Orientation="Horizontal" DataSourceID="SiteMapDataSource1" StaticDisplayLevels=2 >
+            <StaticMenuItemStyle BackColor="Transparent" Font-Size="9pt" HorizontalPadding="0px" ItemSpacing="10px" />
+            <DynamicMenuStyle BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px" HorizontalPadding="20px" />
+            <DynamicMenuItemStyle BackColor="Transparent" BorderColor="Transparent" Font-Size="9pt"
+                ForeColor="#404040" ItemSpacing="5px" />
+            <StaticSelectedStyle BackColor="Transparent" />
+        </asp:Menu>
+
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+
+
+    </div>
+       <div id=main>
+            <asp:contentplaceholder  id="ContentPlaceHolder1" runat="server">
+            </asp:contentplaceholder>
+       </div>
+    </div>
+    <div style="position:absolute;top:5px;right:10px;color:white">
+        
+        <asp:LoginView ID=elLog runat=server>
+            <AnonymousTemplate>
+            <a href='<%=Page.ResolveUrl("~/login.aspx")%>' class=headlinks>Login</a> | 
+            <a href='<%=Page.ResolveUrl("~/register.aspx")%>' class=headlinks>Register</a>
+           </AnonymousTemplate>
+            <LoggedInTemplate>
+             <span class=headlinks>Welcome Back <%=Page.User.Identity.Name%>!</span> | <asp:LinkButton ID=lnkLogout runat=server OnClick="lnkLogout_Click1" CssClass="headlinks" CausesValidation=false>Logout</asp:LinkButton>
+            </LoggedInTemplate>
+        </asp:LoginView>
+    
+    </div>
+    <!--#INCLUDE File=js/modal/modal_divs.aspx-->
+
+</form>    
+<div id=footer>
+        &copy;<%=DateTime.Now.Year.ToString() %> BigWonderfulIdea.com. Use of this site is subject to our <a href=# target=_blank>Terms of Use</a>. All rights reserved.<br />
+        Duplication of this site, in part or in whole, is prohibited without prior written consent.
+    </div>
+</body>
+</html>
+

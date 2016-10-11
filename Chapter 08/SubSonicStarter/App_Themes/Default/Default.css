@@ -1,0 +1,192 @@
+﻿body 
+{
+	margin:0px;
+	font: 0.8em arial;
+
+}
+a
+{
+	color:#73880A;
+}
+#header
+{
+	background:#fff url(images/headerbar.png) top left repeat-x;
+	margin:0px;
+	height:110px;
+	
+}
+#headerseparator
+{
+	height:4px;
+	background-color:#ff9900;
+}
+#mainwrapper
+{
+	background:#fff url(images/bg.gif) top left repeat-x;
+	margin:0px;
+}
+#main
+{
+	color: #666666;
+	margin-left:100px;
+	margin-right:100px;
+	padding:0;
+}
+#title
+{
+	margin-left: 100px;
+	padding-top:20px;
+	font-weight: bold;
+	font-size: 2.5em;
+	color: #FFFFFF;
+	font-family: Arial,Helvetica;
+}
+#title a
+{
+	color: #FFFFFF;
+	text-decoration:none;
+}
+#subtitle
+{
+	margin-top: 0px;
+	margin-left: 100px;
+	color: #c5c5c5;
+	font-size: 1.3em;
+	font-family: Arial,Helvetica;
+
+
+}
+#loginbox
+{
+	padding:40px;
+}
+#loginboxwrapper
+{
+	background:url(images/login.png);
+	float:left;
+	margin-right:30px;
+	margin-bottom:30px;
+	margin-left:0px;
+	height:225px;
+	width:240px;
+}
+#leftbox
+{
+	float:left;
+	margin:15px;
+}
+th
+{
+    vertical-align:top;
+}
+td
+{
+    vertical-align:top;
+}
+h1
+{
+	color: #996600;
+	font-size: 1.5em;
+	font-family: arial;
+	margin-bottom: 3px;
+	border-bottom: solid 1px gainsboro;
+	padding: 2px;
+}
+
+h2 {
+	color: #996600;
+	font-size: 1.25em;
+    line-height: normal;
+    font-style: normal;
+    font-family: 'Arial Rounded MT Bold';
+    font-variant: normal;
+}
+
+h3 {
+	color: #996600;
+	font-size: 1.0em;
+    line-height: normal;
+    font-style: normal;
+    font-family: 'Arial Rounded MT Bold';
+    font-variant: normal;
+}
+
+
+img { border: 0px; }
+hr { color: #ccc; height: 1px; }
+table { font-size: 100%; }
+.codeblock 
+{
+	color: #73880A; 
+	font: 100% "Courier New", Courier, monospace; 
+	padding:20px;
+	margin:20px;
+	border-left:1px solid #666666; 
+}
+form { margin: 0px; padding: 0px; }
+input, select 
+{
+    font-size: 9pt;
+    font-family: 'Lucida Sans';
+    border:1px solid #c5c5c5;
+    
+    }
+textarea
+{
+    font-size: 9pt;
+    font-family: 'Lucida Sans';
+    border:1px solid #c5c5c5;
+}
+
+
+#footer {
+	text-align:center;
+	font-size:.7em;
+	color:#888;
+	padding-top:1em;
+	bottom:0;
+	border-top:1px solid whitesmoke;
+	margin-top:20px;
+}
+
+.pagesummary
+{
+	font-size: 0.9em;
+	color: #000000;
+	bottom: 0;
+	font-style: italic;
+	font-family: arial;
+	margin-bottom:15px;
+}
+
+.lastupdated
+{
+	font-size: 0.8em;
+	color: dimgray;
+	padding-top: 1em;
+	bottom: 0;
+	border-top: 1px solid whitesmoke;
+	margin-top: 20px;
+	font-style: italic;
+	font-family: arial;
+	font-weight: bold;
+}
+.loadingbox
+{
+    position:absolute;
+    top:40%;
+    left:40%;
+    border:1px solid lightsteelblue; 
+    background-color: #ffffff; 
+    height:50px; 
+    width:250px;
+    text-align:center;
+    padding-top:20px
+}
+
+.headlinks
+{
+	color:White;
+	font-weight:bold;
+	font-size:small;
+}

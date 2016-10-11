@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>subModal DHTML Modal Dialog / Modal Window Test Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="subModal.css" />
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript" src="subModal.js"></script>
+</head>
+<body>
+
+<div style="width:500px;">
+<h1>subModal test page</h1>
+<p>
+This is a test page for the subModal - a DHTML modal dialog solution.
+</p>
+<p>
+To check out a demonstration, click the button below.
+</p>
+<button onclick="showPopWin('modalContent.html', 400, 200, null);">show modal window</button>
+<p>
+<strong><a href="subModal.zip">Download the code.</a></strong>
+</p>
+<h2>Interested to know how this works?</h2>
+<p>
+<a href="/sublog/subModal">Check out the explanation.</a>
+</p>
+<p>
+This demo is known to work in IE 6.x, FireFox 1.x, Safari &amp Opera 7.x.
+</p>
+<p>
+CSS transparency is being used in IE, but is available on FireFox &amp; Safari as well.
+</p>
+<p>
+Right now I'm using a 24bit transparent PNG for the background. This allows transparency to work in Opera as well, since their CSS support is a bit lacking.
+<br />
+If you don't care about opera and want control of the color or opacity of the mask from the css, comment that section out.
+</p>
+<p>
+<form>
+	<select>
+		<option>yes, it deals with selects too for you IE users...</option>
+	</select>
+</form>
+</p>
+</div>
+
+<div id="popupMask">&nbsp;</div>
+
+<div id="popupContainer">
+	<div id="popupInner">
+		<div id="popupTitleBar">
+			<div id="popupTitle"></div>
+			<div id="popupControls">
+				<img src="close.gif" onclick="hidePopWin(false);" />
+			</div>
+		</div>
+		<iframe src="loading.html" style="width:100%;height:100%;background-color:transparent;" scrolling="auto" frameborder="0" allowtransparency="true" id="popupFrame" name="popupFrame" width="100%" height="100%"></iframe>
+	</div>
+</div>
+
+</body>
+</html>

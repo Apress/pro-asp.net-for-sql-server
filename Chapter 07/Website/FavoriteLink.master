@@ -1,0 +1,43 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FavoriteLink.master.cs" Inherits="FavoriteLink_master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Favorite Links</title>
+    <link href="/favicon.gif" type="image/gif" rel="icon" />
+    <link type="text/css" href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="mainContainer">
+            <table class="mainTable">
+                <tr>
+                    <td class="left">
+                        <h1 class="mainTitle">
+                        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/favicon.gif" 
+                            BorderWidth="0" />
+                        Favorite Links
+                        </h1>
+                    </td>
+                    <td class="navlinks">
+                        <fl:HeaderNavigation ID="hn1" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="mainBody">
+                        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                <asp:HyperLink ID="hlAdmin" runat="server" 
+                    NavigateUrl="~/Admin/Default.aspx" Visible="False">Admin</asp:HyperLink>
+                </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

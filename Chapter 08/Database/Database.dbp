@@ -1,0 +1,19 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "Database"
+   MSDTVersion = "80"
+   DefDBRef = ".\sqlexpress.Chapter08.dbo"
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+      Script = "instnwnd.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = ".\sqlexpress.Chapter08.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=Chapter08;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Queries"
+   End
+End

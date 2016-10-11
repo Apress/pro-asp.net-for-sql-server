@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Chapter05.PhotoAlbumProvider.PhotoAlbumProvider">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>PhotoAlbumProvider.cs</FileName>
+      <HashCode>AAIAAAAEAAAAAAABAAAAAAAAECAgAAIAAAAAABAABAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Chapter05.PhotoAlbumProvider.SqlPhotoAlbumProvider" Collapsed="true">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SqlPhotoAlbumProvider.cs</FileName>
+      <HashCode>AAIAAAAMAAASAQABAAAAAAAAECAgAIIAAAAAABAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chapter05.PhotoAlbumProvider.PhotoAlbumService">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PhotoAlbumService.cs</FileName>
+      <HashCode>AAACAAAAAAAEAAAgAAAAQAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+</ClassDiagram>

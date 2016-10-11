@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<dataClass>
+  <fields>
+    <add name="FirstName" type="System.String"/>
+    <add name="LastName" type="System.String"/>
+    <add name="BirthDate" type="System.DateTime"/>
+    <add name="Location" type="System.String"/>
+  </fields>
+</dataClass>

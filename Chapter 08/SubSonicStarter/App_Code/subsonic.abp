@@ -1,0 +1,11 @@
+*
+If you get an error and it's pointing to this file, it means the BuildProvider didn't run properly. Usually that means your connection string is goofed up.
+Please be sure to take a look at the connection string, and if you need more help our docs are at 
+
+http://www.codeplex.com/actionpack/Wiki/View.aspx?title=Docs&referringTitle=Home
+
+Our forums are at 
+
+http://actionpack.wekeroad.com
+
+Deep breath... we'll fix it...

@@ -1,0 +1,44 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "Database"
+   MSDTVersion = "80"
+   DefDBRef = ".\sqlexpress.Chapter04.dbo"
+   Begin Folder = "Constraints"
+      Script = "AddConstraints.sql"
+      Script = "AddIndexing.sql"
+      Script = "RemoveConstraints.sql"
+      Script = "RemoveIndexing.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = ".\sqlexpress.Chapter04.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=Chapter04;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Stored Procedures"
+      Script = "chpt04_ClearData.sql"
+      Script = "chpt04_DeletePerson.sql"
+      Script = "chpt04_GetAllCountries.sql"
+      Script = "chpt04_GetAllPeople.sql"
+      Script = "chpt04_GetAllPeopleRowCount.sql"
+      Script = "chpt04_GetCitiesByCountry.sql"
+      Script = "chpt04_GetLastNames.sql"
+      Script = "chpt04_GetLocationRanges.sql"
+      Script = "chpt04_GetPeopleByLastName.sql"
+      Script = "chpt04_GetPeopleByLocation.sql"
+      Script = "chpt04_GetPeopleSubSetSorted.sql"
+      Script = "chpt04_GetPerson.sql"
+      Script = "chpt04_InsertPerson.sql"
+      Script = "chpt04_PopulateData.sql"
+      Script = "chpt04_SaveLocation.sql"
+      Script = "chpt04_SavePerson.sql"
+      Script = "chpt04_UpdatePerson.sql"
+   End
+   Begin Folder = "Tables"
+      Script = "chpt04_Location.sql"
+      Script = "chpt04_Person.sql"
+   End
+   Begin Folder = "Utility Scripts"
+      Script = "PopulateData.sql"
+   End
+End

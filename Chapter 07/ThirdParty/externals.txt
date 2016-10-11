@@ -1,0 +1,4 @@
+MSDataApplicationBlock http://svn.offwhite.net/svn/ThirdParty/Microsoft/EnterpriseLibrary3.1/Data
+NUnit2.2 http://svn.offwhite.net/svn/ThirdParty/NUnit/2.2/
+Log4Net1.2.9 http://svn.offwhite.net/svn/ThirdParty/log4net/1.2.9/
+nStuff http://svn.offwhite.net/svn/ThirdParty/nStuff

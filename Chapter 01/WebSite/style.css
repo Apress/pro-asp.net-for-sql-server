@@ -1,0 +1,51 @@
+﻿
+body {
+    background-color: white;
+    font-family: arial, verdana, san-serif;
+}
+h1.mainTitle 
+{
+	color: #009;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 0 2px;
+    padding: 0;
+}
+div.mainContainer {
+    width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.mainContainer table.mainTable 
+{
+	border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+div.mainContainer table.mainTable tr,
+div.mainContainer table.mainTable  tr td 
+{
+    margin: 0;
+    padding: 2px;
+}
+div.mainContainer table.mainTable tr td.left {
+    background-color: #d0d0d0;
+    width: 50%;
+    text-align: left;
+}
+div.mainContainer table.mainTable tr td.right {
+    background-color: #d0d0d0;
+    width: 50%;
+    text-align: right;
+    font-size: 14px;
+}
+div.mainContainer table.mainTable tr td.mainBody {
+    background-color: #dfdfdf;
+    padding: 0;
+}
+td.label 
+{
+	font-weight: bold;
+	text-align: right;
+}

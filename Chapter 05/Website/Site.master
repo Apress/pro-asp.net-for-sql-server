@@ -1,0 +1,27 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link type="text/css" href="ThickBox/thickbox.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h1>Chapter 5</h1>
+        <div class="Breadcrumbs">
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+        </asp:SiteMapPath>
+        </div>
+        <hr />
+        <asp:contentplaceholder id="MainContentPlaceHolder" runat="server">
+        </asp:contentplaceholder>
+        <hr />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

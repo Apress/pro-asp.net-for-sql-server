@@ -1,0 +1,53 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "AdventureWorksDatabase"
+   MSDTVersion = "80"
+   DefDBRef = "virtual1\sqlexpress.AdventureWorks.dbo"
+   Begin Folder = "AspNet Scripts"
+      Script = "AspNet_SqlCacheRegisterTableStoredProcedure.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = "virtual1\sqlexpress.AdventureWorks.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 0
+      End
+      Begin DBRefNode = "virtual1\sqlexpress.Chapter05.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=Chapter05;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 0
+      End
+      Begin DBRefNode = "windows2003\sql2005.AdventureWorks.dbo"
+         ConnectStr = "Data Source=WINDOWS2003\SQL2005;Initial Catalog=AdventureWorks;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Notifications Scripts"
+      Script = "01 Create Service Broker Endpoint.sql"
+      Script = "02 Enable Service Broker.sql"
+      Script = "03 Grant Permissions.sql"
+      Script = "04 Review Settings.sql"
+   End
+   Begin Folder = "Other"
+      Script = "Create Service Broker Endpoint.sql"
+      Script = "Create User for Notifications.sql"
+      Script = "EnableServiceBroker.sql"
+      Script = "Grant Query Notifications.sql"
+      Script = "Misc.sql"
+      Script = "PopulateSimpleProducts.sql"
+      Script = "PrepareNotifications.sql"
+   End
+   Begin Folder = "Stored Procedure Scripts"
+      Script = "chpt05_GetAllProducts.sql"
+      Script = "chpt05_GetAllProductsWithPhotos.sql"
+      Script = "chpt05_GetProductByID.sql"
+      Script = "chpt05_GetProductPhotos.sql"
+      Script = "chpt05_SetListPriceByID.sql"
+   End
+   Begin Folder = "Table Scripts"
+      Script = "SimpleProduct.sql"
+   End
+   Begin Folder = "Trigger Scripts"
+      Script = "Product_DependencyTrigger.sql"
+   End
+End

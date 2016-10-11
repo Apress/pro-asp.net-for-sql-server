@@ -1,0 +1,87 @@
+﻿<!-- 
+  Microsoft Visual Studio 2005 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkId=55111
+-->
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.60403</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BF18B3F-036D-4632-BDD8-EC1B1A057928}</ProjectGuid>
+    <SourceWebPhysicalPath>..\Website</SourceWebPhysicalPath>
+    <SourceWebProject>{ECE71198-C953-400F-9D17-639F07296F88}|d:\Projects\Apress\Book1\Chapter 08\Website</SourceWebProject>
+    <SourceWebVirtualPath>/Website</SourceWebVirtualPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\Debug</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Website_deploy</SingleAssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\Release</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Website_deploy</SingleAssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'QA|AnyCPU' ">
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <UseWebConfigReplacement>true</UseWebConfigReplacement>
+    <SingleAssemblyName>Website_deploy</SingleAssemblyName>
+    <OutputPath>.\QA</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Website_deploy</SingleAssemblyName>
+    <OutputPath>.\Staging</OutputPath>
+    <UseWebConfigReplacement>true</UseWebConfigReplacement>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <UseWebConfigReplacement>true</UseWebConfigReplacement>
+    <SingleAssemblyName>Website_deploy</SingleAssemblyName>
+    <OutputPath>.\Production</OutputPath>
+    <UseExernalWebConfigReplacementFile>true</UseExernalWebConfigReplacementFile>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <WebConfigReplacementFiles Include="Config\ConnectionStrings.QA.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <WebConfigReplacementFiles Include="Config\ConnectionStrings.Staging.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <WebConfigReplacementFiles Include="Config\ConnectionStrings.Production.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{B3A19335-84C4-43B8-B7C1-A0D687ED4DC9}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v8.0\Microsoft.WebDeployment.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.WebDeployment.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="BeforeMerge">
+  </Target>
+  <Target Name="AfterMerge">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

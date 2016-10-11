@@ -1,0 +1,34 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Chapter01.master.cs" Inherits="Chapter01Master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="mainContainer">
+            <table class="mainTable">
+                <tr>
+                    <td class="left">
+                        <h1 class="mainTitle">
+                            [BookTitle]: Chapter 1</h1>
+                    </td>
+                    <td class="right">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" />
+                        <asp:HyperLink ID="hlAdmin" runat="server" NavigateUrl="~/Admin/">Admin</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="mainBody">
+                        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "PhotoAlbumDatabase"
+   MSDTVersion = "80"
+   DefDBRef = ".\sqlexpress.Chapter05.dbo"
+   Begin Folder = "Constraints"
+      Script = "AddConstraints.sql"
+      Script = "DropConstraints.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = ".\sqlexpress.Chapter05.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=Chapter05;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Populate Scripts"
+      Script = "Populate.sql"
+   End
+   Begin Folder = "Stored Procedure Scripts"
+      Script = "pap_DeleteAlbum.sql"
+      Script = "pap_DeletePhoto.sql"
+      Script = "pap_GetAlbumsByUserName.sql"
+      Script = "pap_GetPhotosByAlbum.sql"
+      Script = "pap_InsertAlbum.sql"
+      Script = "pap_InsertPhoto.sql"
+      Script = "pap_MoveAlbum.sql"
+      Script = "pap_MovePhoto.sql"
+      Script = "pap_UpdateAlbum.sql"
+      Script = "pap_UpdatePhoto.sql"
+   End
+   Begin Folder = "Table Scripts"
+      Script = "pap_Albums.sql"
+      Script = "pap_Photos.sql"
+   End
+End

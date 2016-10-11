@@ -1,0 +1,78 @@
+<Project DefaultTargets="RunScripts" 
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+
+  <PropertyGroup>
+    <Environment Condition=" '$(Environment)' == '' ">Development</Environment>
+    <Interactive Condition="'$(Interactive)' == ''">False</Interactive>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'Development' ">
+    <ConnectionString>
+      Data Source=.\SQLEXPRESS;Initial Catalog=Chapter09;Integrated Security=True
+    </ConnectionString>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'QA' ">
+    <ConnectionString>
+      Data Source=QADB\SQL2005;Initial Catalog=Chapter09;Integrated Security=True
+    </ConnectionString>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'Staging' ">
+    <ConnectionString>
+      Data Source=StagingDB\SQL2005;Initial Catalog=Chapter09;Integrated Security=True
+    </ConnectionString>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'Production' ">
+    <ConnectionString>
+      Data Source=ProductionDB\SQL2005;Initial Catalog=Chapter09;Integrated Security=True
+    </ConnectionString>
+  </PropertyGroup>
+
+  <Target Name="RunScripts">
+    <ExecuteDDL Files="Database\Change Scripts\Update1.sql"
+                ConnectionString="$(ConnectionString)"
+                Condition=" Exists('Database\Change Scripts\Update1.sql') ">
+    </ExecuteDDL>
+    <ExecuteDDL Files="Database\Change Scripts\Update2.sql"
+                ConnectionString="$(ConnectionString)"
+                Condition=" Exists('Database\Change Scripts\Update2.sql') ">
+    </ExecuteDDL>
+
+  </Target>
+
+  <Target Name="PromptForTarget" Condition="'$(Interactive)' == 'True'">
+
+    <Message Text="Select an Environment: "></Message>
+    <Message Text="1) Development" Importance="high"></Message>
+    <Message Text="2) QA" Importance="high"></Message>
+    <Message Text="3) Staging" Importance="high"></Message>
+    <Message Text="4) Production" Importance="high"></Message>
+
+    <Prompt Text="    Enter a target:">
+      <Output TaskParameter="UserInput" PropertyName="SelectedTarget"/>
+    </Prompt>
+
+    <Message Text="Selected target is $(SelectedTarget)"></Message>
+
+    <MSBuild Targets="RunScripts"
+             Projects="db.proj"
+             Properties="Environment=Development"
+             Condition="'$(SelectedTarget)' == '1'"></MSBuild>
+    <MSBuild Targets="RunScripts"
+             Projects="db.proj"
+             Properties="Environment=QA"
+             Condition="'$(SelectedTarget)' == '2'"></MSBuild>
+    <MSBuild Targets="RunScripts"
+             Projects="db.proj"
+             Properties="Environment=Staging"
+             Condition="'$(SelectedTarget)' == '3'"></MSBuild>
+    <MSBuild Targets="RunScripts"
+             Projects="db.proj"
+             Properties="Environment=Production" 
+             Condition="'$(SelectedTarget)' == '4'"></MSBuild>
+  </Target>
+  
+</Project>

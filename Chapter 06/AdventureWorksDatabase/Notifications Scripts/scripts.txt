@@ -1,0 +1,13 @@
+
+update dbo.Customers 
+set CompanyName = 'Zywave 5'
+where CustomerID = 2
+
+update dbo.SimpleProduct
+set ListPrice = 35.17
+where ProductID = 1
+
+select * from dbo.SimpleProduct
+
+delete from dbo.SimpleProduct where ProductID > 5
+

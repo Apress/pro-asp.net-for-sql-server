@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Default.aspx" title="Chapter08" description="" xmlns="">
+    <siteMapNode url="~/Locations.aspx" title="Locations" description="View/edit all items">
+      <siteMapNode url="~/NewLocation.aspx" title="New Location" description="Add new item" />
+      <siteMapNode url="~/LocationDetail.aspx" title="Location Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Persons.aspx" title="Persons" description="View/edit all items">
+      <siteMapNode url="~/NewPerson.aspx" title="New Person" description="Add new item" />
+      <siteMapNode url="~/PersonDetail.aspx" title="Person Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

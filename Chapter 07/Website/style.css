@@ -1,0 +1,176 @@
+﻿
+body {
+    background-color: white;
+    font-family: arial, verdana, san-serif;
+    font-size: 12px;
+}
+a, a:link, a:visited 
+{
+	color: #009;
+	text-decoration: none;
+}
+a:hover 
+{
+    color: #00c;
+}
+a.tl1
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+a.tl2
+{
+	font-size: 18px;
+}
+a.tl3
+{
+	font-size: 16px;
+}
+a.tl4
+{
+	font-size: 14px;
+}
+a.tl5
+{
+	font-size: 12px;
+}
+h1.mainTitle 
+{
+	color: #009;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 0 2px;
+    padding: 0;
+    display: inline;
+}
+h2.mainSubTitle 
+{
+	color: #003;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 0 2px;
+    padding: 0;
+    display: inline;
+}
+h3.Title 
+{
+	margin: 0 0 0 0;
+	padding: 3px 1px 3px 1px;
+}
+div.mainContainer {
+    width: 630px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.mainContainer table.mainTable 
+{
+	border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+div.mainContainer table.mainTable tr,
+div.mainContainer table.mainTable  tr td 
+{
+    margin: 0;
+    padding: 2px;
+}
+div.mainContainer table.mainTable tr td.left {
+    background-color: #d0d0d0;
+    width: 50%;
+    text-align: left;
+}
+div.mainContainer table.mainTable tr td.right {
+    background-color: #d0d0d0;
+    width: 50%;
+    text-align: right;
+    font-size: 14px;
+}
+div.mainContainer table.mainTable tr td.navlinks
+{
+	text-align: right;
+    background-color: #d0d0d0;
+    padding: 1px 5px 3px 5px;
+}
+div.mainContainer table.mainTable tr td.navlinks a
+{
+	text-decoration: none;
+	color: #444;
+}
+div.mainContainer table.mainTable tr td.navlinks a:hover 
+{
+    color: #699;
+}
+div.mainContainer table.mainTable tr td.headerNavigation a
+{
+	font-size: 12px;
+}
+div.mainContainer table.mainTable tr td.mainBody {
+    background-color: #dfdfdf;
+    padding: 4px 5px 3px 5px;
+}
+table.home 
+{
+	width: 100%;
+}
+table.home tr td
+{	
+	vertical-align: top;
+}
+table.home tr td.login 
+{
+	width: 180px;
+}
+table tr td.header 
+{
+	text-align: right;
+	font-weight: bold;
+}
+ul.Links 
+{
+	margin: 0 0 0 3px;
+	padding: 0 0 0 5px;
+}
+ul.Links li 
+{
+	list-style: none;
+}
+ul.Links li:before 
+{
+	content: "\00BB \0020";
+}
+ul.Links li span.Rating 
+{
+    color: #aaa;
+}
+ul.Links li span.Rating:hover 
+{
+    color: #add;
+}
+div.tagCloud 
+{
+	padding: 3px;
+	border: 1px solid #999;
+	background: #ddd;
+}
+div.cpeHeader h3 
+{
+	display: inline;
+    cursor: pointer;
+}
+div.cpeHeader span.ctrl 
+{
+    color: #aaa;
+    font-size: 10px;
+    cursor: pointer;
+}
+div.Loading 
+{
+	display: none;
+}
+img.LoadingBar
+{
+	width: 220px;
+	height: 19px;
+	margin: 15px 0 0 110px;
+}

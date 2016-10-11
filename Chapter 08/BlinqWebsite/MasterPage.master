@@ -1,0 +1,27 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head runat="server">
+    <title>Chapter08</title>
+</head>
+<body>
+    <form id="mainForm" runat="server">       
+            <div id="masthead">
+                <div id="breadcrumbs">
+                    <asp:SiteMapDataSource runat="server" ID="dsSiteMap" ShowStartingNode="false" />
+                    <asp:SiteMapPath runat="server" ID="ctlBreadcrumbs" />
+                </div>
+            </div>
+            <div id="content">
+                <div id="menu">                    
+                     <asp:Menu ID="mainMenu" runat="server" SkinID="MainMenuVertical" DataSourceID="dsSiteMap" CssSelectorClass="PrettyMenu" StaticDisplayLevels="1" OnMenuItemDataBound="mainMenu_MenuItemDataBound" CssClass="PrettyMenuDesignTime" >
+                     </asp:Menu>                    
+                </div>
+                <div id="maincontent">
+                    <asp:ContentPlaceHolder ID="mainContentPlaceholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>       
+    </form>
+</body>
+</html>

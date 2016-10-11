@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema id="SampleDataSet" 
+                  targetNamespace="http://tempuri.org/SampleDataSet.xsd"
+                  elementFormDefault="qualified"
+                  attributeFormDefault="qualified"
+                  xmlns="http://tempuri.org/SampleDataSet.xsd"
+                  xmlns:mstns="http://tempuri.org/SampleDataSet.xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SampleDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded"></xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

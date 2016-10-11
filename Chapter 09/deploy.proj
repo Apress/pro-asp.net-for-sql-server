@@ -1,0 +1,125 @@
+<Project DefaultTargets="Build" 
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask
+    TaskName="ReplaceConfigSections"
+    AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v8.0\Microsoft.WebDeployment.Tasks.dll"/>
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+
+  <PropertyGroup>
+    <Environment Condition=" '$(Environment)' == '' ">QA</Environment>
+    <Interactive Condition="'$(Interactive)' == ''">False</Interactive>
+
+    <WebDeploymentDir>Website_deploy</WebDeploymentDir>
+
+    <SourceDeploymentDir>$(WebDeploymentDir)\Release</SourceDeploymentDir>
+    <DestinationDeploymentDir>$(MSBuildProjectDirectory)\Deployments\$(Environment)</DestinationDeploymentDir>
+    <ZipFilename>$(MSBuildProjectDirectory)\Deployments\$(Environment).zip</ZipFilename>
+
+    <!-- Replacement Settings -->
+    <WDTargetDir>$(WebDeploymentDir)\$(Environment)</WDTargetDir>
+    <ValidateWebConfigReplacement>false</ValidateWebConfigReplacement>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == '' ">
+    <UseExternalWebConfigReplacementFile>false</UseExternalWebConfigReplacementFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'QA' ">
+    <UseExternalWebConfigReplacementFile>false</UseExternalWebConfigReplacementFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'Staging' ">
+    <UseExternalWebConfigReplacementFile>false</UseExternalWebConfigReplacementFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Environment)' == 'Production' ">
+    <UseExternalWebConfigReplacementFile>true</UseExternalWebConfigReplacementFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(Environment)' == 'QA' ">
+    <WebConfigReplacementFiles Include="Config\ConnectionStrings.QA.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+    <WebConfigReplacementFiles Include="Config\Chapter09Group.QA.config">
+      <Section>chapter09Group</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Environment)' == 'Staging' ">
+    <WebConfigReplacementFiles Include="Config\ConnectionStrings.Staging.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Environment)' == 'Production' ">
+    <WebConfigReplacementFiles Include="Config\ConnectionStrings.Production.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+
+  <Target Name="Build" Condition=" !Exists('$(WebDeploymentDir)\Release') ">
+    <MSBuild Projects="build.proj" Targets="Build" Properties="Configuration=Release"></MSBuild>
+  </Target>
+
+  <Target Name="InitDeployment" DependsOnTargets="Build">
+    <Delete Files="$(DestinationDeploymentDir)\**\*.*" 
+      Condition=" Exists('$(DestinationDeploymentDir)') "></Delete>
+    <MakeDir Directories="$(DestinationDeploymentDir)" 
+      Condition=" !Exists('$(DestinationDeploymentDir)') "></MakeDir>
+
+    <CreateItem Include="$(SourceDeploymentDir)\**\*.*">
+      <Output ItemName="WebsiteFiles" TaskParameter="Include"/>
+    </CreateItem>
+
+    <Copy SourceFiles="@(WebsiteFiles)"
+      DestinationFiles="@(WebsiteFiles->'$(DestinationDeploymentDir)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true"></Copy>
+
+  </Target>
+
+  <Target Name="PrepDeployment" DependsOnTargets="InitDeployment">
+    <ReplaceConfigSections
+       RootPath="$(DestinationDeploymentDir)"
+       WebConfigReplacementFiles="@(WebConfigReplacementFiles)"
+       UseExternalConfigSource="$(UseExternalWebConfigReplacementFile)"
+       ValidateSectionElements="$(ValidateWebConfigReplacement)"
+     />
+
+    <CreateItem Include="$(DestinationDeploymentDir)\**\*.*">
+      <Output ItemName="ZipFiles" TaskParameter="Include"/>
+    </CreateItem>
+
+    <Zip Files="@(ZipFiles)" 
+         ZipFileName="$(ZipFilename)" 
+         WorkingDirectory="$(DestinationDeploymentDir)" />
+    
+    <Message Text="See Output: $(ZipFilename)"></Message>
+  </Target>
+
+  <Target Name="PromptForTarget" Condition="'$(Interactive)' == 'True'">
+
+    <Message Text="Select an Environment: "></Message>
+    <Message Text="1) QA" Importance="high"></Message>
+    <Message Text="2) Staging" Importance="high"></Message>
+    <Message Text="3) Production" Importance="high"></Message>
+
+    <Prompt Text="    Enter a target:">
+      <Output TaskParameter="UserInput" PropertyName="SelectedTarget"/>
+    </Prompt>
+
+    <Message Text="Selected target is $(SelectedTarget)"></Message>
+
+    <MSBuild Targets="PrepDeployment" 
+             Projects="deploy.proj" 
+             Properties="Environment=QA" 
+             Condition="'$(SelectedTarget)' == '1'"></MSBuild>
+    <MSBuild Targets="PrepDeployment" 
+             Projects="deploy.proj"
+             Properties="Environment=Staging" 
+             Condition="'$(SelectedTarget)' == '2'"></MSBuild>
+    <MSBuild Targets="PrepDeployment" 
+             Projects="deploy.proj"
+             Properties="Environment=Production" 
+             Condition="'$(SelectedTarget)' == '3'"></MSBuild>
+  </Target>
+  
+</Project>

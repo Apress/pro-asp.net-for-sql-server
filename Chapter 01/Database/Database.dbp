@@ -1,0 +1,15 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "Database"
+   MSDTVersion = "80"
+   DefDBRef = "virtual2.Chapter01.dbo"
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = "virtual2.Chapter01.dbo"
+         ConnectStr = "Data Source=(local);Initial Catalog=Chapter01;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Utility Scripts"
+      Script = "WipeProviderData.sql"
+   End
+End

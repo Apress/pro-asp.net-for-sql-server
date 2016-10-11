@@ -1,0 +1,3 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="LoginControl.ascx.cs" Inherits="Controls_LoginControl" %>
+    <asp:Login ID="Login1" runat="server" CreateUserText="Create New Account" CreateUserUrl="~/CreateNewAccount.aspx" DestinationPageUrl="~/Home.aspx" PasswordRecoveryText="Forgot Password?" PasswordRecoveryUrl="~/PasswordRecovery.aspx" RememberMeSet="True" FailureText="Login failed. Please try again." LoginButtonText="Sign In" RememberMeText="Remember me" TextLayout="TextOnTop" TitleText="">
+    </asp:Login>

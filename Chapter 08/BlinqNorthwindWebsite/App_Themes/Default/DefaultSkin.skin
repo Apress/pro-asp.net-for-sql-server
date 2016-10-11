@@ -1,0 +1,22 @@
+
+<%-- Default GridView appearance --%>
+<asp:GridView runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BorderColor="#B2D0DF" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" GridLines="None">
+    <PagerStyle BackColor="#0182D2" Font-Bold="True" Font-Names="Arial" Font-Size="Small"
+        ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
+    <HeaderStyle BackColor="#0182D2" Font-Bold="True" Font-Names="Arial" Font-Size="Small" Font-Underline="False" ForeColor="White" HorizontalAlign="Left" VerticalAlign="Middle" />
+    <AlternatingRowStyle BackColor="#D5E1EE" />
+</asp:GridView>
+
+<%-- Default DetailsView appearance --%>
+<asp:DetailsView runat="server" AutoGenerateRows="False" Height="50px" Width="275px" BackColor="White" BorderColor="#B2D0DF" BorderStyle="Solid" BorderWidth="1px" GridLines="None" >            
+    <CommandRowStyle BackColor="#0182D2" Font-Names="Arial" Font-Bold="True" ForeColor="White" Height="20px" />
+    <AlternatingRowStyle BackColor="#D5E1EE" />
+</asp:DetailsView>
+
+<%-- Menu skin for browsers other than IE5to9, Opera8to9, Firefox, Netscape 6to9 and Safari --%>
+<asp:Menu SkinID="MainMenuVertical" Runat="server" BackColor="#FFFFFF" ForeColor="#0B4892" Width="160px" BorderColor="#B2D0DF" BorderStyle="Solid" BorderWidth="1px" Font-Names="Arial, Sans-serif" Font-Bold="true"  StaticBottomSeparatorImageUrl="~/App_Themes/Default/images/bottom_separator.gif" StaticEnableDefaultPopOutImage="false" StaticPopOutImageUrl="~/App_Themes/Default/images/bullet.png">
+    <StaticMenuItemStyle Height="23px" HorizontalPadding="5px" />
+    <StaticHoverStyle ForeColor="#FF7700" />
+    <DynamicMenuItemStyle Height="25px" BorderColor="#B2D0DF" BorderStyle="Solid" BorderWidth="1px" HorizontalPadding="10px" />
+    <DynamicHoverStyle ForeColor="#FF7700" /> 
+</asp:Menu>

@@ -1,0 +1,21 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+<%@ Register Src="NavigationControl.ascx" TagName="NavigationControl" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h2>Chapter 3: Data Binding Choices</h2>
+            <uc1:NavigationControl ID="NavigationControl1" runat="server" />
+            <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+        </div>
+    </form>
+</body>
+</html>

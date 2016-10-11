@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Default.aspx" title="Northwind" description="" xmlns="">
+    <siteMapNode url="~/Shippers.aspx" title="Shippers" description="View/edit all items">
+      <siteMapNode url="~/NewShipper.aspx" title="New Shipper" description="Add new item" />
+      <siteMapNode url="~/ShipperDetail.aspx" title="Shipper Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Orders.aspx" title="Orders" description="View/edit all items">
+      <siteMapNode url="~/NewOrder.aspx" title="New Order" description="Add new item" />
+      <siteMapNode url="~/OrderDetail.aspx" title="Order Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/OrderDetails.aspx" title="OrderDetails" description="View/edit all items">
+      <siteMapNode url="~/NewOrderDetail.aspx" title="New OrderDetail" description="Add new item" />
+      <siteMapNode url="~/OrderDetailDetail.aspx" title="OrderDetail Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/CustomerDemographics.aspx" title="CustomerDemographics" description="View/edit all items">
+      <siteMapNode url="~/NewCustomerDemographic.aspx" title="New CustomerDemographic" description="Add new item" />
+      <siteMapNode url="~/CustomerDemographicDetail.aspx" title="CustomerDemographic Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Regions.aspx" title="Regions" description="View/edit all items">
+      <siteMapNode url="~/NewRegion.aspx" title="New Region" description="Add new item" />
+      <siteMapNode url="~/RegionDetail.aspx" title="Region Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/TextEntries.aspx" title="TextEntries" description="View/edit all items">
+      <siteMapNode url="~/NewTextEntry.aspx" title="New TextEntry" description="Add new item" />
+      <siteMapNode url="~/TextEntryDetail.aspx" title="TextEntry Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Employees.aspx" title="Employees" description="View/edit all items">
+      <siteMapNode url="~/NewEmployee.aspx" title="New Employee" description="Add new item" />
+      <siteMapNode url="~/EmployeeDetail.aspx" title="Employee Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Categories.aspx" title="Categories" description="View/edit all items">
+      <siteMapNode url="~/NewCategory.aspx" title="New Category" description="Add new item" />
+      <siteMapNode url="~/CategoryDetail.aspx" title="Category Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Customers.aspx" title="Customers" description="View/edit all items">
+      <siteMapNode url="~/NewCustomer.aspx" title="New Customer" description="Add new item" />
+      <siteMapNode url="~/CustomerDetail.aspx" title="Customer Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Suppliers.aspx" title="Suppliers" description="View/edit all items">
+      <siteMapNode url="~/NewSupplier.aspx" title="New Supplier" description="Add new item" />
+      <siteMapNode url="~/SupplierDetail.aspx" title="Supplier Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/ProductCategoryMaps.aspx" title="ProductCategoryMaps" description="View/edit all items">
+      <siteMapNode url="~/NewProductCategoryMap.aspx" title="New ProductCategoryMap" description="Add new item" />
+      <siteMapNode url="~/ProductCategoryMapDetail.aspx" title="ProductCategoryMap Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/CustomerCustomerDemos.aspx" title="CustomerCustomerDemos" description="View/edit all items">
+      <siteMapNode url="~/NewCustomerCustomerDemo.aspx" title="New CustomerCustomerDemo" description="Add new item" />
+      <siteMapNode url="~/CustomerCustomerDemoDetail.aspx" title="CustomerCustomerDemo Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Territories.aspx" title="Territories" description="View/edit all items">
+      <siteMapNode url="~/NewTerritory.aspx" title="New Territory" description="Add new item" />
+      <siteMapNode url="~/TerritoryDetail.aspx" title="Territory Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/EmployeeTerritories.aspx" title="EmployeeTerritories" description="View/edit all items">
+      <siteMapNode url="~/NewEmployeeTerritory.aspx" title="New EmployeeTerritory" description="Add new item" />
+      <siteMapNode url="~/EmployeeTerritoryDetail.aspx" title="EmployeeTerritory Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+    <siteMapNode url="~/Products.aspx" title="Products" description="View/edit all items">
+      <siteMapNode url="~/NewProduct.aspx" title="New Product" description="Add new item" />
+      <siteMapNode url="~/ProductDetail.aspx" title="Product Detail" description="Item details" displayInMenu="false" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

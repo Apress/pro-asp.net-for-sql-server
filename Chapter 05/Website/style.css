@@ -1,0 +1,53 @@
+﻿body 
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 12px;
+}
+
+div.Breadcrumbs
+{
+	margin: 4px;
+}
+
+div.gallery 
+{
+	margin: 4px;
+}
+
+div.imgbox 
+{
+	float: left;
+}
+
+div.imgblock
+{
+	display: block;
+	margin: 3px;
+	width: 120px;
+	height: 145px;
+	text-align: center;
+	border: 2px solid #ddd !important;
+}
+
+div.imgblock img.photo 
+{
+	margin: 4px;
+	border: 1px solid #000 !important;
+}
+
+div.imgblock span.title 
+{
+	font-size: 10px;
+	text-align: center;
+}
+
+a.thickbox 
+{
+	text-decoration: none;
+}
+
+a.Big 
+{
+	font-size: 18px;
+	font-weight: bold;
+}

@@ -1,0 +1,33 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "Database"
+   MSDTVersion = "80"
+   DefDBRef = ".\sqlexpress.Chapter02.dbo"
+   Begin Folder = "Constraints"
+      Script = "AddConstraints.sql"
+      Script = "AddIndexing.sql"
+      Script = "RemoveConstraints.sql"
+      Script = "RemoveIndexing.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = ".\sqlexpress.Chapter02.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=Chapter02;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Stored Procedures"
+      Script = "chpt02_ClearData.sql"
+      Script = "chpt02_GetAllPeople.sql"
+      Script = "chpt02_GetLocationRanges.sql"
+      Script = "chpt02_PopulateData.sql"
+      Script = "chpt02_SaveLocation.sql"
+      Script = "chpt02_SavePerson.sql"
+   End
+   Begin Folder = "Tables"
+      Script = "chpt02_Location.sql"
+      Script = "chpt02_Person.sql"
+   End
+   Begin Folder = "Utility Scripts"
+      Script = "PopulateData.sql"
+   End
+End

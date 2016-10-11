@@ -1,0 +1,52 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "Database"
+   MSDTVersion = "80"
+   DefDBRef = ".\sqlexpress.Chapter07.dbo"
+   Begin Folder = "Constraints"
+      Script = "Add Constraints.sql"
+      Script = "Remove Constraints.sql"
+   End
+   Begin DBRefFolder = "Database References"
+      Begin DBRefNode = ".\sqlexpress.Chapter07.dbo"
+         ConnectStr = "Data Source=.\SQLEXPRESS;Initial Catalog=Chapter07;Integrated Security=True"
+         Provider = "{91510608-8809-4020-8897-FBA057E22D54}"
+         Colorizer = 6
+      End
+   End
+   Begin Folder = "Misc"
+      Script = "WipeProviderData.sql"
+   End
+   Begin Folder = "Stored Procedures"
+      Script = "chpt07_GetFavoriteLinksByMultipleTags.sql"
+      Script = "chpt07_GetFavoriteLinksByProfileID.sql"
+      Script = "chpt07_GetFavoriteLinksByTag.sql"
+      Script = "chpt07_GetFavoriteLinksByUrl.sql"
+      Script = "chpt07_GetFavoriteLinksProfile.sql"
+      Script = "chpt07_GetLatest20FavoriteLinkssByProfileID.sql"
+      Script = "chpt07_GetLatestFavoriteLinksDate.sql"
+      Script = "chpt07_GetLinkTagsByFavoriteLinksID.sql"
+      Script = "chpt07_GetLinkTagsByProfileID.sql"
+      Script = "chpt07_GetLinkTagsWithCountByProfileID.sql"
+      Script = "chpt07_GetNullables.sql"
+      Script = "chpt07_GetRecentFavoriteLinksByProfileID.sql"
+      Script = "chpt07_PurgeFavoriteLinksByProfileID.sql"
+      Script = "chpt07_PurgeLinkTagsByProfileID.sql"
+      Script = "chpt07_PurgeProfile.sql"
+      Script = "chpt07_RemoveLinkTag.sql"
+      Script = "chpt07_SaveFavoriteLink.sql"
+      Script = "chpt07_SaveLinkTag.sql"
+      Script = "chpt07_SaveLinkTitle.sql"
+      Script = "chpt07_SaveLinkUrl.sql"
+      Script = "chpt07_SaveProfile.sql"
+      Script = "chpt07_SaveTagToken.sql"
+   End
+   Begin Folder = "Tables"
+      Script = "chpt07_FavoriteLinks.sql"
+      Script = "chpt07_LinkTags.sql"
+      Script = "chpt07_LinkTitles.sql"
+      Script = "chpt07_LinkUrls.sql"
+      Script = "chpt07_Nullable.sql"
+      Script = "chpt07_Profile.sql"
+      Script = "chpt07_TagTokens.sql"
+   End
+End

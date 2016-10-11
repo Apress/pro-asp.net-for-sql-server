@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" 
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<NoWarn Condition="'$(NoWarn)'!=''">$(NoWarn),</NoWarn>
+		<NoWarn>$(NoWarn)MSB4078</NoWarn>
+		<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+		<ApplicationName>Chapter08</ApplicationName>
+		<ApplicationVersion>v1.0</ApplicationVersion>
+
+		<Interactive Condition="'$(Interactive)' == ''">False</Interactive>
+    <SolutionDir Condition="'$(SolutionDir)' == ''">.</SolutionDir>
+
+    <SubSonicDir Condition="'$(SubSonicDir)' == ''">D:\Projects\Common\Tools\SubSonic\Bin</SubSonicDir>
+    <SubSonic>$(SubSonicDir)\sonic.exe</SubSonic>
+    <SubSonicArgs>/config ClassLibrary\App.config /out ClassLibrary\Generated\SubSonic</SubSonicArgs>
+
+    <BlinqDir Condition="'$(BlinqDir)' == ''">C:\Program Files\Microsoft ASP.NET\Blinq</BlinqDir>
+    <Blinq>"$(BlinqDir)\blinq.exe"</Blinq>
+    
+    <BlinqWebsiteDir>$(SolutionDir)\BlinqWebsite</BlinqWebsiteDir>
+    <BlinqTmpDir>$(SolutionDir)\BlinqTmp</BlinqTmpDir>
+    <BlinqArgs>/l:cs /server:.\SQLEXPRESS /database:Chapter08 /namespace:Chapter08.BlinqDAL /t:$(BlinqTmpDir) /f</BlinqArgs>
+
+    <BlinqNorthwindWebsiteDir>$(SolutionDir)\BlinqNorthwindWebsite</BlinqNorthwindWebsiteDir>
+    <BlinqNorthwindTmpDir>$(SolutionDir)\BlinqNorthwindTmp</BlinqNorthwindTmpDir>
+    <BlinqNorthwindArgs>/l:cs /server:.\SQLEXPRESS /database:Northwind /namespace:Chapter08.BlinqNorthwindDAL /t:$(BlinqNorthwindTmpDir) /f</BlinqNorthwindArgs>
+
+  </PropertyGroup>
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+	<Target Name="Clean">
+    <Message Text="Running Clean Target..." Importance="high"></Message>
+    <MSBuild Projects="ClassLibrary\ClassLibrary.csproj"
+				 Targets="Clean" ContinueOnError="false"></MSBuild>
+  </Target>
+	<Target Name="PreBuild">
+    <Message Text="No PreBuild Tasks"></Message>
+	</Target>
+	<Target Name="Build">
+		<Message Text="Running Build Target..." Importance="high"></Message>
+		<MSBuild Projects="ClassLibrary\ClassLibrary.csproj" 
+				 Targets="Build" ContinueOnError="false"></MSBuild>
+	</Target>
+	<Target Name="PostBuild">
+		<Message Text="No PostBuild Tasks"></Message>
+	</Target>
+	<Target Name="RunTests" DependsOnTargets="Build">
+		<Message Text="No Tests Tasks"></Message>
+	</Target>
+	<Target Name="Rebuild" DependsOnTargets="Clean;PreBuild;Build;PostBuild">
+		<Message Text="Full Rebuild Successful!" Importance="high"></Message>
+	</Target>
+	<Target Name="FullBuild" 
+	  DependsOnTargets="Clean;PreBuild;Build;PostBuild;RunTests">
+		<Message Text="Full Build Successful!" Importance="high"></Message>
+	</Target>
+  <Target Name="SubSonicGenerate">
+    <Exec Command="$(SubSonic) generate $(SubSonicArgs)"></Exec>
+  </Target>
+  <Target Name="SubSonicVersion">
+    <Exec Command="$(SubSonic) version $(SubSonicArgs)"></Exec>
+  </Target>
+  <Target Name="SubSonicScriptSchema">
+    <Exec Command="$(SubSonic) scriptschema $(SubSonicArgs)"></Exec>
+  </Target>
+  <Target Name="SubSonicScriptData">
+    <Exec Command="$(SubSonic) scriptdata $(SubSonicArgs)"></Exec>
+  </Target>
+  <Target Name="BlinqGenerate">
+
+    <!-- Chapter08 Database -->
+    
+    <MakeDir Directories="$(BlinqTmpDir)" Condition=" !Exists('$(BlinqTmpDir)') "></MakeDir>
+    <MakeDir Directories="$(BlinqWebsiteDir)" Condition=" !Exists('$(BlinqWebsiteDir)') "></MakeDir>
+    
+    <Exec Command="$(Blinq) $(BlinqArgs)"></Exec>
+
+    <CreateItem Include="$(BlinqTmpDir)\**\*.*">
+      <Output ItemName="BlinqFiles" TaskParameter="Include"/>
+    </CreateItem>
+    <Copy SourceFiles="@(BlinqFiles)"
+          DestinationFiles="@(BlinqFiles->'$(BlinqWebsiteDir)\%(RecursiveDir)%(Filename)%(Extension)')" 
+          SkipUnchangedFiles="true"></Copy>
+    <RemoveDir Directories="$(BlinqTmpDir)"></RemoveDir>
+
+    <!-- Northwind Database -->
+
+    <MakeDir Directories="$(BlinqNorthwindTmpDir)" Condition=" !Exists('$(BlinqNorthwindTmpDir)') "></MakeDir>
+    <MakeDir Directories="$(BlinqNorthwindWebsiteDir)" Condition=" !Exists('$(BlinqNorthwindWebsiteDir)') "></MakeDir>
+
+    <Exec Command="$(Blinq) $(BlinqNorthwindArgs)"></Exec>
+
+    <CreateItem Include="$(BlinqNorthwindTmpDir)\**\*.*">
+      <Output ItemName="BlinqNorthwindFiles" TaskParameter="Include"/>
+    </CreateItem>
+    <Copy SourceFiles="@(BlinqNorthwindFiles)"
+          DestinationFiles="@(BlinqNorthwindFiles->'$(BlinqNorthwindWebsiteDir)\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true"></Copy>
+    <RemoveDir Directories="$(BlinqNorthwindTmpDir)"></RemoveDir>
+    
+  </Target>
+
+  <Target Name="ShowProperty">
+    <Message Text="$(CustomProperty)" Importance="high"></Message>
+  </Target>
+
+	<Target Name="PromptForTarget" Condition="'$(Interactive)' == 'True'">
+
+		<Message Text=" "></Message>
+		<Message Text="1) Clean" Importance="high"></Message>
+		<Message Text="2) PreBuild" Importance="high"></Message>
+		<Message Text="3) Build" Importance="high"></Message>
+		<Message Text="4) PostBuild" Importance="high"></Message>
+		<Message Text="5) RunTests" Importance="high"></Message>
+		<Message Text="6) Rebuild" Importance="high"></Message>
+		<Message Text="7) FullBuild" Importance="high"></Message>
+    <Message Text="8) SubSonic..." Importance="high"></Message>
+    <Message Text="9) Blinq..." Importance="high"></Message>
+    
+    <Prompt Text="    Enter a target:">
+			<Output TaskParameter="UserInput" PropertyName="SelectedTarget"/>
+		</Prompt>
+
+		<Message Text="Selected target is $(SelectedTarget)"></Message>
+
+		<MSBuild Targets="Clean" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '1'"></MSBuild>
+		<MSBuild Targets="PreBuild" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '2'"></MSBuild>
+		<MSBuild Targets="Build" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '3'"></MSBuild>
+		<MSBuild Targets="PostBuild" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '4'"></MSBuild>
+		<MSBuild Targets="RunTests" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '5'"></MSBuild>
+		<MSBuild Targets="Rebuild" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '6'"></MSBuild>
+		<MSBuild Targets="FullBuild" Projects="build.proj" 
+		  Condition="'$(SelectedTarget)' == '7'"></MSBuild>
+    <MSBuild Targets="PromptForSubSonicTarget" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '8'"></MSBuild>
+    <MSBuild Targets="PromptForBlinqTarget" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '9'"></MSBuild>
+	</Target>
+
+  <Target Name="PromptForSubSonicTarget" Condition="'$(Interactive)' == 'True'">
+    <Message Text=" "></Message>
+    <Message Text="1) Generate" Importance="high"></Message>
+    <Message Text="2) Version" Importance="high"></Message>
+    <Message Text="3) Script Schema" Importance="high"></Message>
+    <Message Text="4) Script Data" Importance="high"></Message>
+
+    <Prompt Text="    Enter a target:">
+      <Output TaskParameter="UserInput" PropertyName="SelectedTarget"/>
+    </Prompt>
+
+    <Message Text="Selected target is $(SelectedTarget)"></Message>
+
+    <MSBuild Targets="SubSonicGenerate" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '1'"></MSBuild>
+    <MSBuild Targets="SubSonicVersion" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '2'"></MSBuild>
+    <MSBuild Targets="SubSonicScriptSchema" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '3'"></MSBuild>
+    <MSBuild Targets="SubSonicScriptData" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '4'"></MSBuild>
+  </Target>
+
+  <Target Name="PromptForBlinqTarget" Condition="'$(Interactive)' == 'True'">
+    <Message Text=" "></Message>
+    <Message Text="1) Generate" Importance="high"></Message>
+
+    <Prompt Text="    Enter a target:">
+      <Output TaskParameter="UserInput" PropertyName="SelectedTarget"/>
+    </Prompt>
+
+    <Message Text="Selected target is $(SelectedTarget)"></Message>
+
+    <MSBuild Targets="BlinqGenerate" Projects="build.proj"
+		  Condition="'$(SelectedTarget)' == '1'"></MSBuild>
+  </Target>
+
+</Project>

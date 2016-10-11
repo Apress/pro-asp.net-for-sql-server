@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NoWarn Condition="'$(NoWarn)'!=''">$(NoWarn),</NoWarn>
+    <NoWarn>$(NoWarn)MSB4078</NoWarn>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <Target Name="Build">
+    <MSBuild Projects="ClassLibrary\ClassLibrary.csproj" Targets="Build" />
+  </Target>
+  <Target Name="BuildUnitTests" DependsOnTargets="Build">
+    <MSBuild Projects="UnitTests\UnitTests.csproj" Targets="Build" />
+  </Target>
+  <Target Name="RunUnitTests" DependsOnTargets="Build;BuildUnitTests">
+    <CreateItem Include="UnitTests\bin\$(Configuration)\UnitTests.exe">
+      <Output TaskParameter="Include" ItemName="UnitTestsAssembly"/>
+    </CreateItem>
+    <Message Text="UnitTestsAssembly = @(UnitTestsAssembly)" />
+    <NUnit Assemblies="@(UnitTestsAssembly)" ContinueOnError="false"></NUnit>
+    <Message Text="Tests run successfully!" Importance="high"></Message>
+  </Target>
+</Project>
